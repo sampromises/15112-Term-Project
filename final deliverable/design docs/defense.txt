@@ -1,0 +1,22 @@
+I implemented the defense so the Player is always calculating
+and moving to the defensive 'spot' he is supposed to be at.
+
+1) onBallDefense
+	When Player is on defense and matchup has the ball.
+	The defensive 'spot' is going to be:
+		-a distance from the opponent
+			-if opponent gets closer to the hoop, the defense Player will step-up
+			-if opponent is far from the hoop, the defense Player will back-off
+		-always between the opponent and the hoop
+			-preventing driving
+
+2) offBallDefense
+	When Player is on defense and matchup does NOT have the ball.
+	The defensive 'spot' is going to be:
+		-a distance from the opponent, same as onBallDefense
+		-always between the opponent and the player WITH the ball
+			-preventing passes
+
+These are both calculated using angles and distances.
+[see 'spots.png']
+

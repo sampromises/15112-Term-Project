@@ -1,0 +1,19 @@
+----------------------------------------------------------------------
+Controlling Player / Team One:
+    You can press 'u' to toggle control of the player.
+    Use the mouse to click where to go. 
+    Use 'space' to shoot the ball.
+    Use '1',2','3','4','5' to try to pass to your teammates.
+    You will always control the Player with the ball.
+
+
+    [Note] if you are the Point Guard, you need to inbound the ball.
+    
+Options:
+    You can press 'p' to pause the game.
+    You can also press 'm' to bring back this menu.
+    Press 'r' at any time to restart the game.
+
+
+Press any key to start!
+----------------------------------------------------------------------

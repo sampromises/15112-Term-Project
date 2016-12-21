@@ -1,0 +1,28 @@
+===========================================
+Rules:    
+    The game ends at 10 minutes, unless overtime is needed.
+    
+Shooting:
+    Field goal percentage is a function of:
+        -distance from hoop
+        -distance from defender
+Assists:
+    An assist is awarded if the recipient makes a shot
+    within 3 seconds of being passed the ball.
+Steals/Turnovers:
+    Running into defenders can cause the ball to be stolen.
+    Passes can also be intercepted.
+===========================================
+Positional tendencies:
+    1 - Point Guard:
+        Likes to pass, move around, be far from the basket.
+        Always inbounds the ball.
+    2 - Shooting Guard:
+        Likes to shoot, move around, be far from the basket.
+    3 - Small Forward:
+        Likes to do a little bit of everything.
+    4 - Power Forward:
+        Likes to shoot, drive, and be close to the basket.
+    5 - Center:
+        Likes to shoot, drive, and be close to the basket.
+===========================================

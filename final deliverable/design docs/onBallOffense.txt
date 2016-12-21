@@ -1,0 +1,33 @@
+More specific information on my onBallOffense decisions:
+
+a) pass
+	A Player checks if a teammate is open by calculating if there
+	is a straight line between himself and the teammate.
+		-Then the ball is passed midair (no one has the ball in this time).
+		-During this time, the other team can intercept the ball (at a low chance)
+b) shoot
+	A Player determines if he is 'open' baseed on how far his defender is
+	and if he is not too far from the hoop.
+		-I calculated Field Goal Percentage as a function of both
+		 the defender distance and shot distance (link cited in code).
+	Player makes a 3-pointer if he is behind the 3-point line.
+c) drive
+	This was implemented by calculating the angle between the Player and the hoop
+	and the angle between his defender and the hoop.
+		-If the angle was enough, it means the Player is open for a drive.
+d) move
+	This just calls on finding a new spot, same as in offBallOffense.
+e) hold
+	Player stays still.
+
+The tendencies were implemented to a default as such:
+passBall = [5,3,3,2,2]
+shoot =    [2,5,3,3,2]
+drive =    [3,4,3,5,4]
+hold =     [2,3,3,4,5]
+move =     [3,3,3,2,3]
+with the index corresponding to a Player's position - 1.
+So a Point Guard (1) most likely pass, while a Power Forward (4) would most likely drive.
+
+On every 'onTimerFired', onBallOffense will call random.random() to get a random chance
+and then determine randomly what to do, depending on his tendencies.

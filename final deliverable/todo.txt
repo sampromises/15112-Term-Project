@@ -1,0 +1,18 @@
+-improve transition
+
+Dynamic system:
+-change hard-coded chances of:
+--stealChance (dependent on ballHandling vs stealProficiency?)
+--blockChance (dependent on height+vertical, blockProficiency?)
+
+onBallOffense:
+-call for screen (1, 2)
+
+offBallOffense:
+-set off ball screen
+
+
+offBallOffense:
+-players make smarter cuts
+--recognize where ball is
+--recognize where teammates are

@@ -1,0 +1,33 @@
+1) onBallOffense
+	This is when the player has the ball and is on offense.
+
+	The Player then looks at its tendencies, which are based on what position the player is.
+	1 - Point Guard: Likes to pass, move around, be far from the basket.
+	2 - Shooting Guard: Likes to shoot, move around, be far from the basket.
+	3 - Small Forward: Likes to do a little bit of everything.
+	4 - Power Forward: Likes to shoot, drive, and be close to the basket.
+	5 - Center: Likes to shoot, drive, and be close to the basket.
+
+	Based on these tendencies, the onBallOffense Player then decides to do one of the 5:
+	a) shoot
+		-first checks if he is open for a jumpshot
+	b) pass
+		-tries to pass to closest, open teammate to the hoop
+	c) drive
+		-tries to drive to the basket
+	d) move
+		-moves to a different spot
+	e) hold
+		-stands still (hold)
+
+	More information on how these 5 are implemented are in the "design-onBallOffense.txt"
+
+2) offBallOffense
+	This is when the player does NOT have the ball and is on offense.
+
+	There are 25 'spots' that divide the half-court region. (25 squares, more specifically)
+	[see 'spots.png']
+	Each player will move to a new 'spot' every so often to try to get open for a pass.
+	But these spots are based on Player position, for instance...
+		A point guard (1) will be farther from the hoop.
+		A center (5) will only move around the hoop.

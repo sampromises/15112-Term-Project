@@ -1,0 +1,41 @@
+PTS - Points
+FGM - Field Goal Made
+FGA - Field Goal Attempted
+3PM - 3 Pointer Made
+3PA - 3 Pointer Attempted
+If a player shoots, FGA += 1
+	If it was a 3 pointer, 3PA += 1
+		If shot was made, FGM += 1, 3PM += 1, PTS += 3
+	If it wasn't a 3 pointer...
+		If shot was made, FGM += 1, PTS += 2
+
+ORB - Offensive Rebounds
+DRB - Defensive Rebounds
+TRB - Total Rebounds
+If a player is the closest player to the hoop after a missed shot, TRB += 1
+	If he was on offense, ORB += 1 (happens less frequently)
+	If he was on defense, DRB += 1
+
+AST - Assists
+After a pass, Game takes note of the last passer and the time it was passed.
+If a shot is made at any time...
+	If it has been less than 3 seconds since the pass was made,
+	the last passer is awarded an assist.
+
+STL - Steals
+The defender can steal the ball in 2 ways:
+	1) By bumping into an Offensive Player with the ball.
+		-Note, this chance depends on the Offensive Player's position.
+		-From positions 1 to 5, ball handling ability typically goes down.
+	2) By being in the way of a pass.
+		-This happens at a low percentage, however.
+
+BLK - Blocks
+If a Player shoots the ball, but is very close (overlapping) a defender,
+the defender blocks the shot at a low percentage.
+The blocked shot goes to a random player nearby.
+
+TOV - Turnovers
+Any time the ball is stolen, a turnover is given to the player who had the ball/passed the ball.
+
+[See 'sample printout.txt' to see the results of a game that was run to the end.]

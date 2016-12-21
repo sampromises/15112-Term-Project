@@ -1,0 +1,14 @@
+This was done just by allowing the user to control a player on teamOne.
+The user tells where the Player to go with a click of the mouse.
+
+The user can also try to pass to a teammate by using the number keys.
+(The pass will not go through if the pass is not open.)
+
+If a pass is successful, the user will then control the Player with the ball.
+
+The user can also shoot at any time using space.
+Admittedly, this can be abused.
+
+The user can toggle control by pressing 'u'.
+
+[Note] The entire game transcript and player stats will be printed after the window is closed.
