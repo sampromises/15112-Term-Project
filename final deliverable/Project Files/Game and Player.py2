@@ -1,4 +1,4 @@
-from tkinter import *
+from Tkinter import *
 from eventBasedAnimationClass import EventBasedAnimationClass
 import math
 import random
@@ -41,7 +41,7 @@ class Player(object):
         percentages = [n/total for n in tendencies]
         summ = 0
         finalList = []
-        for i in range(len(percentages)):
+        for i in xrange(len(percentages)):
             finalList.append(summ + percentages[i])
             summ += percentages[i]
         return finalList
@@ -376,10 +376,8 @@ class Player(object):
         #sorting teammates by distance to hoop
         hoopLocation = self.oppHoop
         teammatesByDistance = sorted(self.teammates, 
-            #lambda a, b: cmp(Player.getDistance(a.location,hoopLocation),
-            #                    Player.getDistance(b.location,hoopLocation)))
-            # 2to3 fix
-            key = lambda a:Player.getDistance(a.location,hoopLocation) )
+            lambda a, b: cmp(Player.getDistance(a.location,hoopLocation),
+                                Player.getDistance(b.location,hoopLocation)))
         for teammate in teammatesByDistance:
             if teammate is self: continue
             else:
@@ -396,7 +394,7 @@ class Player(object):
     #determining spot to go to depending on position
     def newSpot(self):
         if self.position == 1:
-            rowTerritory = range(5)
+            rowTerritory = xrange(5)
             colTerritory = [3, 4]
         elif self.position == 2:
             rowTerritory = [0, 1]
@@ -890,7 +888,7 @@ class Game(EventBasedAnimationClass):
         arcSegments = 14
         arcStart = 90
         arcIncrement = 180 / arcSegments
-        for i in range(arcSegments):
+        for i in xrange(arcSegments):
             if i%2 == 1:
                 self.canvas.create_arc(keyx0,keyy0,keyx1,keyy1, start = arcStart,
                     extent = arcIncrement, width = 2, style = ARC)
@@ -903,7 +901,7 @@ class Game(EventBasedAnimationClass):
         arcSegments = 14
         arcStart = 90
         arcIncrement = -180 / arcSegments
-        for i in range(arcSegments):
+        for i in xrange(arcSegments):
             if i%2 == 1:
                 self.canvas.create_arc(keyx0,keyy0,keyx1,keyy1, start = arcStart,
                     extent = arcIncrement, width = 2, style = ARC)
@@ -912,12 +910,12 @@ class Game(EventBasedAnimationClass):
         #drawing corner three-point lines
         (hoopx, hoopy) = self.hoopOne
         (corner3x, corner3y) = (self.margin, hoopy - self.hoopToCorner3)
-        for line in range(2):
+        for line in xrange(2):
             self.canvas.create_line(corner3x,corner3y,
                                     corner3x + self.corner3Length,corner3y, width = 2)
             corner3y += 2*self.hoopToCorner3
         (corner3x, corner3y) = (self.width-self.rightMargin-self.margin, hoopy - self.hoopToCorner3)
-        for line in range(2):
+        for line in xrange(2):
             self.canvas.create_line(corner3x,corner3y,
                                     corner3x - self.corner3Length,corner3y, width = 2)
             corner3y += 2*self.hoopToCorner3
@@ -967,7 +965,7 @@ class Game(EventBasedAnimationClass):
         gridCols = 10
         gridWidth = self.courtWidth / gridCols
         leftx = self.margin
-        for col in range(gridCols):
+        for col in xrange(gridCols):
             rightx = leftx + gridWidth
             xBounds = (math.ceil(leftx), math.floor(rightx))
             if col < gridCols/2: xSpotsOne.append(xBounds)
@@ -979,7 +977,7 @@ class Game(EventBasedAnimationClass):
         gridRows = 5
         gridHeight = self.courtHeight / gridRows
         topy = self.margin
-        for row in range(gridRows):
+        for row in xrange(gridRows):
             boty = topy + gridHeight
             yBounds = (topy + 1, boty)
             ySpots.append(yBounds)
@@ -1242,15 +1240,15 @@ class Game(EventBasedAnimationClass):
     #overriding to print game results after
     def run(self):
         super(Game, self).run()
-        print("Printing game play-by-play...")
-        print(self.dialogue)
-        print()
-        print("Printing box score...")
-        print(self.getBoxscore())
+        print "Printing game play-by-play..."
+        print self.dialogue
+        print
+        print "Printing box score..."
+        print self.getBoxscore()
         oneName = self.teamOneAttributes['teamName']
         twoName = self.teamTwoAttributes['teamName']
         (oneScore, twoScore) = self.getScores()
-        print("FINAL SCORE: [%s: %d - %s: %d]" % (oneName,oneScore,twoName,twoScore))
+        print "FINAL SCORE: [%s: %d - %s: %d]" % (oneName,oneScore,twoName,twoScore)
 
 game = Game(8) #change argument to fit resolution scale
 game.run()

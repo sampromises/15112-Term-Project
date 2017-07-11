@@ -1,6 +1,6 @@
 # eventBasedAnimationClass.py
 
-from Tkinter import *
+from tkinter import *
 
 class EventBasedAnimationClass(object):
     def onMousePressed(self, event): pass
