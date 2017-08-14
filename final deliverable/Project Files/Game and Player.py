@@ -861,7 +861,7 @@ class Game(EventBasedAnimationClass):
     #drawing the court boundaries
     def drawCourt(self):
         #yellow background
-        self.canvas.create_rectangle(0,0,self.width,self.height,fill='white')
+        self.canvas.create_rectangle(0,0,self.width,self.height,fill='black')
         #drawing court bounds
         (x0, y0) = (self.margin, self.margin)
         self.canvas.create_rectangle(x0,y0,x0+self.courtWidth,y0+self.courtHeight,
@@ -1032,7 +1032,7 @@ class Game(EventBasedAnimationClass):
     def drawClocks(self):
         (x0, y0) = (self.margin+self.courtWidth,0)
         (x1, y1) = (self.width,self.margin)
-        self.canvas.create_rectangle(x0,y0,x1,y1,width=0,fill='white')
+        self.canvas.create_rectangle(x0,y0,x1,y1,width=0,fill='black')
         (x, y) = (self.margin, self.height)
         #converting gameClock(seconds) to mm:ss
         gameMin = self.gameClock / 60
@@ -1047,7 +1047,7 @@ class Game(EventBasedAnimationClass):
     def drawDialogue(self):
         (x, y) = ((self.margin+self.courtWidth)*1.01, self.margin+self.courtHeight)
         size = int( self.scale * 0.9)
-        self.canvas.create_text(x,y, anchor = SW, font = ("Helvetica", size), text = self.dialogue)
+        self.canvas.create_text(x,y, anchor = SW, font = ("Helvetica", size), text = self.dialogue, fill='white')
 
     #gets the box score
     def getBoxscore(self):
